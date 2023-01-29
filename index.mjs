@@ -1,6 +1,18 @@
-import { html, ReactDOMClient } from "./deps.mjs";
-import { App } from "./components/App.mjs";
+import { html, createRoot, React } from "./deps.mjs";
+import { Header } from "./components/Header.mjs";
 
-ReactDOMClient.createRoot(document.getElementById("root")).render(
-  html`<${App} />`
-);
+const { StrictMode } = React;
+let App = () =>
+  html`<${StrictMode}>
+    <main>
+      <${Header} />
+    </main>
+  <//>`;
+
+createRoot(document.getElementById("root")).render(html`<${App} />`);
+
+if (import.meta.hot) {
+  import.meta.hot.accept((module) => {
+    App = module.App;
+  });
+}

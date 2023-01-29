@@ -2,9 +2,10 @@
   "name": "where-bundle",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "npx @web/dev-server"
+    "start": "web-dev-server",
+    "serve": "cross-env NODE_ENV=production web-dev-server"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,10 @@
   "bugs": {
     "url": "https://github.com/opeologist/where-bundle/issues"
   },
-  "homepage": "https://github.com/opeologist/where-bundle#readme"
+  "homepage": "https://github.com/opeologist/where-bundle#readme",
+  "devDependencies": {
+    "@web/dev-server": "^0.1.35",
+    "@web/dev-server-hmr": "^0.1.10",
+    "cross-env": "^7.0.3"
+  }
 }

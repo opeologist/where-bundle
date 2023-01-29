@@ -1,7 +1,7 @@
-import React from "react";
-import ReactDOMClient from "react-dom/client";
+import React, { createElement } from "react";
+import { createRoot } from "react-dom/client";
 import htm from "htm";
 
-const html = htm.bind(React.createElement);
+const html = htm.bind(createElement);
 
-export { React, ReactDOMClient, html };
+export { React, createRoot, html };
